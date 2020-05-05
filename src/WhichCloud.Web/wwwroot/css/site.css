@@ -1,0 +1,49 @@
+﻿
+body{
+    background-color: black;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+a{
+    color:#ccc;
+}
+
+a.active {
+    border: dashed;
+}
+
+a:hover{
+    color:#ffc107;
+}
+
+.title{
+    margin-left:20%;
+    margin-top:4.5%;
+    color:#ccc;
+}
+
+
+table{
+    color:#ccc;
+    border-collapse: collapse;
+    font-size: medium;
+}
+
+table tr{
+    color:#ccc;
+    border: dashed 3px;
+}
+
+table th{
+    color: #ccc;
+    border: dashed 2px;
+}
+
+table td{
+    color:#ccc;
+    border: dashed 2px;
+}
+
+thead{
+    text-align: center;
+}
