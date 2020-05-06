@@ -22,7 +22,6 @@ namespace WhichCloud.Web
                 {
                     
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://*:80");
                 });
     }
 }
