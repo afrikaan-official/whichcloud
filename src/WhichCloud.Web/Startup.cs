@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,7 +24,7 @@ namespace WhichCloud.Web
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<ResourceContext>(options => options.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<ResourceContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                
             services.AddScoped<IVMService, VMService>();
 
@@ -37,7 +32,7 @@ namespace WhichCloud.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ResourceContext context)
         {
             if (env.IsDevelopment())
             {
@@ -50,6 +45,7 @@ namespace WhichCloud.Web
                 app.UseHsts();
             }
 
+            context.Database.Migrate();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
