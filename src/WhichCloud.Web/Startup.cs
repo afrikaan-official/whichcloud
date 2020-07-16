@@ -1,6 +1,7 @@
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,6 +24,13 @@ namespace WhichCloud.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
+            services.Configure<ForwardedHeadersOptions>(options =>
+            {
+                options.ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+                options.KnownNetworks.Clear();
+                options.KnownProxies.Clear();
+            });
 
             services.AddDbContext<ResourceContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                
@@ -52,6 +60,7 @@ namespace WhichCloud.Web
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseForwardedHeaders();
 
 
             app.UseEndpoints(endpoints =>
