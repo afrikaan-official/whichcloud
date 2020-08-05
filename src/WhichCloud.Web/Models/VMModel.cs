@@ -3,6 +3,7 @@ namespace WhichCloud.Web.Models
     public class VMModel
     {
         public int Id { get; set; }
+        
         public VMTypeModel Type { get; set; }
         public int Memory { get; set; }
         public int CPU { get; set; }

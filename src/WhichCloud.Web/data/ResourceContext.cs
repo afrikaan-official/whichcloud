@@ -8,6 +8,8 @@ namespace WhichCloud.Web.data
     {
         public DbSet<VMType> VMTypes { get; set; }
         public DbSet<VM> VMs { get; set; }
+        
+        public DbSet<Source> Sources { get; set; }
 
         public ResourceContext(DbContextOptions options)
             :base(options)

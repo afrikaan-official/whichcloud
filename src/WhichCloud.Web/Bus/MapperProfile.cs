@@ -10,6 +10,9 @@ namespace WhichCloud.Web.Bus
             CreateMap<VM, VMModel>();
 
             CreateMap<VMType, VMTypeModel>();
+
+            CreateMap<SourceModel, Source>();
+            CreateMap<Source, SourceModel>();
         }
     }
 }

@@ -1,0 +1,22 @@
+@model HomeVmModel
+<div class="ui tiny modal">
+    <i class="close icon"></i>
+    <div class="header">
+        WhichCloud
+    </div>
+    <div class="image content">
+        <div class="description">
+            <div class="ui header"><em data-emoji="hand_splayed_tone2" class="medium"></em>hello</div>
+            <p> This is my side project for comparing cloud providers.</p>
+            <p> You can help me by recommending new sources:</p>
+            <form class="ui form" asp-controller="Home" asp-action="AddSource" method="post">
+                <div class="field">
+                    <label asp-for="Source.Url"></label>
+                    <input type="text" asp-for="Source.Url" name="Url" placeholder="source url">
+                </div>
+                <button class="ui button" type="Submit">Submit</button>
+                <div class="ui error message"></div>   
+            </form>
+        </div>
+    </div>
+</div>

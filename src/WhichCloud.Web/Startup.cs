@@ -1,4 +1,6 @@
 using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpOverrides;
@@ -8,6 +10,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WhichCloud.Web.Bus;
 using WhichCloud.Web.data;
+using WhichCloud.Web.Models;
+using WhichCloud.Web.Validators;
+
 
 namespace WhichCloud.Web
 {
@@ -32,9 +37,13 @@ namespace WhichCloud.Web
                 options.KnownProxies.Clear();
             });
 
+            
+            services.AddRouting(options => options.LowercaseUrls = true);
             services.AddDbContext<ResourceContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
                
             services.AddScoped<IVMService, VMService>();
+            services.AddScoped<ISourceService, SourceService>();
+            services.AddMvc().AddFluentValidation(fv=>fv.RegisterValidatorsFromAssemblyContaining<SourceValidator>());
 
             services.AddAutoMapper(typeof(Startup));
         }

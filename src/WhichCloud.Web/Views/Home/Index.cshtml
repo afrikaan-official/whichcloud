@@ -1,4 +1,4 @@
-﻿@model List<VMModel>;
+﻿@model HomeVmModel;
 
 <div class="ui grid container stackable">
     <div class="ui twelve column row centered">
@@ -55,7 +55,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach (var vm in Model)
+                    @foreach (var vm in Model.Vms)
                     {
                         <tr>
                             <td>@vm.Memory GB</td>
@@ -87,12 +87,12 @@
 
         $('.tabular.menu .item').tab();
         $("#aboutModal").click(function () {
-            $('.ui.modal').modal('show');
+            $('.ui.tiny.modal').modal('show');
         });
         $('.ui.form').form({
             fields: {
                 name: {
-                    identifier: 'source',
+                    identifier: 'Url',
                     rules: [
                         {
                             type: 'empty',
