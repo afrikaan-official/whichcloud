@@ -5,20 +5,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" type="text/css" href="~/lib/semantic/dist/semantic.min.css">
   <link rel="stylesheet" href="~/css/site.css"/>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container">
-  @RenderBody()
+<div class="ui grid container stackable">
+    @RenderBody()
 </div>
-    <div class="fixed-bottom ml-2" style="color: #ccc;">
-      <a href="#">about</a>
+<div class="ui modal">
+    <i class="close icon"></i>
+    <div class="header">
+        WhichCloud
     </div>
+    <div class="image content">
+        <div class="ui medium image">
+          
+        </div>
+        <div class="description">
+            <div class="ui header"><em data-emoji="hand_splayed_tone2" class="medium"></em>hello</div>
+            <p> This is my side project for comparing cloud providers.</p>
+            <p> You can recommend new sources:</p>
+            <form class="ui form">
+                <div class="field">
+                    <label>Source</label>
+                    <input type="text" name="source" placeholder="source url">
+                </div>
+                <button class="ui button" type="submit">Submit</button>
+                <div class="ui error message"></div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="left aligned" style="position: fixed;bottom:0;">
+    <a id="aboutModal" href="#">about</a>
+</div>
 </body>
+<script src="~/lib/semantic/dist/semantic.min.js"></script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
 @await RenderSectionAsync("Scripts", required: false)
 </html>

@@ -1,5 +1,4 @@
-﻿
-body{
+﻿body{
     background-color: black;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -7,43 +6,59 @@ body{
 a{
     color:#ccc;
 }
-
-a.active {
-    border: dashed;
-}
-
 a:hover{
     color:#ffc107;
 }
 
-.title{
-    margin-left:20%;
-    margin-top:4.5%;
-    color:#ccc;
+div.ui.secondary.vertical.menu > a.active.item{
+    color: #ccc;
+    border: dashed;
 }
 
+div.ui.secondary.vertical.menu > a.item{
+    color: #ccc;
+}
 
-table{
+div.ui.secondary.vertical.menu > a.item:hover{
+    color:#ffc107;
+}
+
+div.ui.bottom.attached.tab.segment.active > table{
     color:#ccc;
     border-collapse: collapse;
-    font-size: medium;
+    background: black;
 }
 
-table tr{
-    color:#ccc;
+div.ui.top.attached.three.item.menu > div.item{
+    font-weight: 800;
+}
+
+div.ui.bottom.attached.tab.segment.active > table tr{
     border: dashed 3px;
 }
 
-table th{
-    color: #ccc;
+div.ui.bottom.attached.tab.segment.active > table th{
+    background: black;
     border: dashed 2px;
+    color: #ccc;
+    font-size: small;
+    text-align: center;
 }
 
-table td{
+div.ui.bottom.attached.tab.segment.active > table td{
     color:#ccc;
     border: dashed 2px;
 }
 
-thead{
-    text-align: center;
+div.ui.bottom.attached.tab.segment.active > table thead{
+    background: black;
+}
+
+div.ui.top.attached.three.item.menu{
+    background: black;
+    border: dashed 1px #ccc;
+}
+
+div.ui.top.attached.three.item.menu > div.item{
+    color:#ccc;
 }
