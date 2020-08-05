@@ -7,6 +7,72 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="stylesheet" type="text/css" href="lib/semantic/dist/semantic.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+  <style>
+      body{
+          background-color: black;
+          font-family: 'Ubuntu', sans-serif;
+      }
+      
+      a{
+          color:#ccc;
+      }
+      a:hover{
+          color:#ffc107;
+      }
+      
+      div.ui.secondary.vertical.menu > a.active.item{
+          color: #ccc;
+          border: dashed;
+      }
+      
+      div.ui.secondary.vertical.menu > a.item{
+          color: #ccc;
+      }
+      
+      div.ui.secondary.vertical.menu > a.item:hover{
+          color:#ffc107;
+      }
+      
+      div.ui.bottom.attached.tab.segment.active > table{
+          color:#ccc;
+          border-collapse: collapse;
+          background: black;
+      }
+      
+      div.ui.top.attached.three.item.menu > div.item{
+          font-weight: 800;
+      }
+      
+      div.ui.bottom.attached.tab.segment.active > table tr{
+          border: dashed 3px;
+      }
+      
+      div.ui.bottom.attached.tab.segment.active > table th{
+          background: black;
+          border: dashed 2px;
+          color: #ccc;
+          font-size: small;
+          text-align: center;
+      }
+      
+      div.ui.bottom.attached.tab.segment.active > table td{
+          color:#ccc;
+          border: dashed 2px;
+      }
+      
+      div.ui.bottom.attached.tab.segment.active > table thead{
+          background: black;
+      }
+      
+      div.ui.top.attached.three.item.menu{
+          background: black;
+          border: dashed 1px #ccc;
+      }
+      
+      div.ui.top.attached.three.item.menu > div.item{
+          color:#ccc;
+      }
+  </style>
 </head>
 <body>
 <div class="ui grid container stackable">
@@ -17,73 +83,6 @@
     <a id="aboutModal" href="#">about</a>
 </div>
 </body>
-<script type="text/css">
-body{
-    background-color: black;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-a{
-    color:#ccc;
-}
-a:hover{
-    color:#ffc107;
-}
-
-div.ui.secondary.vertical.menu > a.active.item{
-    color: #ccc;
-    border: dashed;
-}
-
-div.ui.secondary.vertical.menu > a.item{
-    color: #ccc;
-}
-
-div.ui.secondary.vertical.menu > a.item:hover{
-    color:#ffc107;
-}
-
-div.ui.bottom.attached.tab.segment.active > table{
-    color:#ccc;
-    border-collapse: collapse;
-    background: black;
-}
-
-div.ui.top.attached.three.item.menu > div.item{
-    font-weight: 800;
-}
-
-div.ui.bottom.attached.tab.segment.active > table tr{
-    border: dashed 3px;
-}
-
-div.ui.bottom.attached.tab.segment.active > table th{
-    background: black;
-    border: dashed 2px;
-    color: #ccc;
-    font-size: small;
-    text-align: center;
-}
-
-div.ui.bottom.attached.tab.segment.active > table td{
-    color:#ccc;
-    border: dashed 2px;
-}
-
-div.ui.bottom.attached.tab.segment.active > table thead{
-    background: black;
-}
-
-div.ui.top.attached.three.item.menu{
-    background: black;
-    border: dashed 1px #ccc;
-}
-
-div.ui.top.attached.three.item.menu > div.item{
-    color:#ccc;
-}
-
-</script>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/semantic/dist/semantic.min.js"></script>
 <script src="~/js/site.js" asp-append-version="true"></script>
